@@ -1,0 +1,203 @@
+.header{
+  position: relative;
+  .menu{
+    width: 80%;
+    margin: auto;
+    @extend .flex_between;
+    align-items: center;
+    padding: 25px 0;
+    .hamburger-menu{
+      display: none;
+    }
+    .logo{
+      .logo__img{
+        width: 6rem;
+      }
+    }
+    .nav{
+      @extend .flex_center;
+      .nav__item{
+        font-family: Roboto-Bold;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 44px;
+        min-width: 120px;
+      }
+      .nav__item:hover{
+        color: $main-color;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+
+  }
+  .main-header{
+    width: 80%;
+    margin: auto;
+    @extend .flex_around;
+    margin-top: 3rem;
+    .header-left{
+      width: 50%;
+      .header-left__title{
+        width: 60%;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 88px;
+        margin-bottom: 40px !important;
+      }
+      .header-left__txt{
+        width: 80%;
+        margin-bottom: 40px !important;
+      }
+      .header-left__btn-blue{
+        background-color: $main-color;
+        color: $white;
+        width: 232px;
+        height: 60px;
+        border: none;
+        margin: .5rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+
+      }
+      .header-left__btn-white{
+        background-color: $white;
+        color: $black;
+        width: 232px;
+        height: 60px;
+        border:  1px solid #CFD9E0 !important;
+        margin: .5rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .header-left__btn-white:active {
+        border:1px solid #CFD9E0 !important;
+      }
+      .header-left__btn-white:focus-visible {
+        outline: -webkit-focus-ring-color auto 0 !important;
+      }
+
+    }
+    .header-right{
+      .header-right__img{
+        border-radius: 8px;
+      }
+    }
+  }
+}
+.header::before{
+  content: "";
+  position: absolute;
+  width: 675px;
+  height: 357px;
+  right: 0;
+  background-color: $main-color;
+  z-index: -1;
+}
+
+
+@media(max-width: 768px){
+  .header{
+    .menu{
+      width: 100%;
+      box-shadow: 0px 4px 10px 1px #ccc;
+      margin-bottom: 2.5rem;
+      min-height: 2rem;
+      position: fixed;
+      background-color: white;
+      z-index: 10000000000000;
+      .hamburger-menu{
+        display: inherit !important;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        font-size: 10rem;
+        .hamburger-menu__img{
+          cursor: pointer;
+          width: 2.35rem;
+        }
+      }
+      .logo{
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        width: 6rem;
+      }
+      .nav{
+        display: none ;
+        flex-direction: column;
+        align-items: end !important;
+        margin-top: 3.3rem;
+        height: 80.35vh;
+        justify-content: start !important;
+        background-color: #F4F6F7;
+        width: 100%;
+        padding: 2.5rem 2rem;
+
+        .nav__item{
+          font-size: 1.25rem;
+          font-weight: bold;
+          height: 2.8rem;
+          width: 100%;
+          text-align: center;
+          margin: 0;
+        }
+        .nav__item:hover{
+          background: #CFD9E0;
+          opacity: 0.32;
+          border-radius: 3px;
+        }
+      }
+    }
+    .main-header{
+      width: 95%;
+      flex-direction: column;
+      margin-top: 0;
+      .header-left{
+        width: 95%;
+        margin-top: 8.5rem;
+        .header-left__title{
+          width: 100%;
+          font-weight: 800;
+          font-size: 44px ;
+          line-height: 64px;
+          margin-bottom: 24px !important;
+        }
+        .header-left__txt{
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          width: 100%;
+        }
+        .header-left__btn-blue,.header-left__btn-white{
+          width: 100%;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+      .header-right{
+        width: 95%;
+        margin-top: 25px !important;
+        margin: auto;
+        .header-right__img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  .header::before{
+    background-color: white !important
+  }
+
+
+}
+
+.openMenu{
+  display: flex !important;
+
+}
